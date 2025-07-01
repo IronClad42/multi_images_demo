@@ -1,0 +1,47 @@
+<h1>Home Page Is Open</h1>
+
+<form action="/Save_product" method="post" enctype="multipart/form-data">
+    <label for="product_name">Enter Product Name</label><br>
+    <input type="text" name="product_name" id="product_name"><br><br>
+
+    <label for="product_price">Enter Product Price</label><br>
+    <input type="text" name="product_price" id="product_price"><br><br>
+
+    <label for="product_deatils">Enter Product Details</label><br>
+    <textarea name="product_deatils" id="product_deatils"></textarea><br><br>
+
+    <label for="product_image">Upload Image</label><br>
+    <input type="file" name="product_image" multiple id="product_image"><br><br>
+
+    <button type="submit">Save Product</button>
+</form>
+
+<br><br>
+
+<table border="1" width="100%">
+    <thead>
+        <tr>
+            <th>Sr NO</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Details</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% multiImages.map((row,i)=>{ %>
+       <tr>
+
+            <td><%-i + 1 %></td>
+            <td><%- row.product_name %></td>
+            <td><%- row.product_price %></td>
+            <td><%- row.product_deatils %></td>
+            <td>
+                  <% row.product_image.map((row2,j)=>{ %>
+                        <img src="/<%-row2.product_image%>" width="100px" alt="">
+                  <% }) %>
+            </td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
