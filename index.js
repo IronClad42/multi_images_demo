@@ -2,8 +2,8 @@ var express = require("express");
 var bodyparset = require("body-parser");
 var exe = require("./db");
 var upload = require("express-fileupload");
-var session = require("express-session
-var nodemailer = require("nodemailer");
+var session = require("express-session")
+var nodemailer = require("nodemailer
 require("dotenv").config();
 var app = express();
 
